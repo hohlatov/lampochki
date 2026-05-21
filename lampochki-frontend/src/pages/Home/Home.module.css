@@ -1,0 +1,98 @@
+.hero {
+  background: linear-gradient(135deg, #2c2416 0%, #4a3820 60%, #6b5230 100%);
+  padding: 60px 40px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroLeft { display: flex; flex-direction: column; gap: 16px; }
+
+.heroBtn {
+  display: inline-block;
+  background: var(--c-lamp);
+  color: var(--c-dark);
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  transition: background 0.2s, transform 0.2s;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.heroBtn:hover { background: var(--c-accent2); transform: translateY(-2px); }
+
+.heroRight { text-align: right; }
+
+.logoMark { font-size: 64px; line-height: 1; }
+
+.heroSubtitle {
+  color: #c8b896;
+  font-size: 15px;
+  margin-top: 8px;
+  max-width: 300px;
+}
+
+.section { padding: 48px 40px; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.sectionTitle {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.promoList { display: flex; flex-direction: column; gap: 12px; }
+
+.promoCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-accent);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 520px;
+}
+
+.promoTag { font-weight: 700; color: var(--c-dark); }
+
+.contacts {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 40px 16px; }
+  .section { padding: 32px 16px; }
+  .heroContent { flex-direction: column; gap: 24px; text-align: center; }
+  .heroRight { text-align: center; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}

@@ -1,0 +1,118 @@
+.page {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  gap: 32px;
+  min-height: calc(100vh - 120px);
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.filterTitle {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--c-dark);
+}
+
+.filterGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.chip {
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-align: left;
+  color: var(--c-text);
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--c-accent); }
+.chip.active {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-dark);
+  font-weight: 700;
+}
+
+.range { width: 100%; accent-color: var(--c-accent); }
+
+.resetBtn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+  color: var(--c-muted);
+  transition: all 0.15s;
+}
+.resetBtn:hover { border-color: var(--c-accent); color: var(--c-dark); }
+
+.main { flex: 1; min-width: 0; }
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.backLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-muted);
+  transition: color 0.2s;
+}
+.backLink:hover { color: var(--c-accent); }
+
+.count { font-size: 13px; color: var(--c-muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--c-muted);
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .page { flex-direction: column; padding: 16px; }
+  .sidebar { width: 100%; position: static; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

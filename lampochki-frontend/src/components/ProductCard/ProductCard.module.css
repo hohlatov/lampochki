@@ -1,0 +1,70 @@
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.imgWrap {
+  display: block;
+  background: #faf8f3;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+}
+
+.info {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--c-dark);
+  transition: color 0.2s;
+}
+.name:hover { color: var(--c-accent); }
+
+.base, .brand {
+  font-size: 12px;
+  color: var(--c-muted);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.price {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--c-dark);
+}
+
+.btn {
+  background: var(--c-accent);
+  color: var(--c-dark);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--c-accent2); }

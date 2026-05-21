@@ -1,0 +1,16 @@
+.page { padding: 32px 40px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
+.container { max-width: 480px; width: 100%; }
+.back { display: inline-block; font-size: 14px; font-weight: 600; color: var(--c-muted); margin-bottom: 24px; }
+.back:hover { color: var(--c-accent); }
+.card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
+.title { font-family: 'Unbounded', sans-serif; font-size: 20px; font-weight: 700; color: var(--c-dark); margin-bottom: 28px; text-align: center; }
+.form { display: flex; flex-direction: column; gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; font-weight: 700; color: var(--c-muted); text-transform: uppercase; }
+.field input { padding: 12px 14px; border: 1px solid var(--c-border); border-radius: 8px; font-size: 15px; background: var(--c-bg); }
+.field input:focus { border-color: var(--c-accent); background: #fff; }
+.error { background: #fee; color: #e55; padding: 10px; border-radius: 8px; font-size: 13px; text-align: center; }
+.submitBtn { background: var(--c-accent); color: var(--c-dark); font-weight: 700; font-size: 15px; padding: 14px; border-radius: var(--radius); margin-top: 8px; transition: background 0.2s; }
+.submitBtn:hover { background: var(--c-accent2); }
+.hint { font-size: 12px; color: var(--c-muted); text-align: center; margin-top: 20px; }
+@media (max-width: 768px) { .page { padding: 16px; } .card { padding: 24px; } }

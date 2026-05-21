@@ -1,0 +1,36 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --c-bg:       #f7f5f0;
+  --c-surface:  #ffffff;
+  --c-border:   #e0dbd0;
+  --c-text:     #1a1a1a;
+  --c-muted:    #6b6560;
+  --c-accent:   #c8a96e;
+  --c-accent2:  #e8c887;
+  --c-dark:     #2c2416;
+  --c-lamp:     #ffe066;
+  --radius:     10px;
+  --shadow:     0 2px 16px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select {
+  font-family: inherit;
+  outline: none;
+}

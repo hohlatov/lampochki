@@ -1,0 +1,95 @@
+.page { padding: 32px 40px; }
+.container { max-width: 640px; margin: 0 auto; }
+
+.back {
+  display: inline-block;
+  font-size: 14px; font-weight: 600;
+  color: var(--c-muted); margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--c-accent); }
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconWrap { margin-bottom: 4px; }
+.icon { font-size: 56px; }
+
+.title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--c-dark);
+}
+
+.subtitle { font-size: 15px; color: var(--c-muted); }
+
+.details {
+  width: 100%;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.detailRow {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--c-border);
+  gap: 16px;
+}
+.detailRow:last-child { border-bottom: none; }
+
+.detailLabel {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--c-muted);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.detailValue {
+  font-size: 14px;
+  color: var(--c-dark);
+  word-break: break-all;
+}
+
+.continueBtn {
+  background: var(--c-accent);
+  color: var(--c-dark);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+.continueBtn:hover { background: var(--c-accent2); }
+
+.empty {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-height: 50vh; gap: 16px; color: var(--c-muted);
+}
+.goBtn {
+  background: var(--c-accent); color: var(--c-dark);
+  font-weight: 700; padding: 12px 28px; border-radius: var(--radius);
+}
+
+@media (max-width: 768px) {
+  .page { padding: 16px; }
+  .card { padding: 28px 20px; }
+  .detailLabel { width: 110px; }
+}
