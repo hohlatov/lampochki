@@ -1,9 +1,0 @@
-__pycache__/
-*.py[cod]
-*.db
-.env
-node_modules/
-dist/
-.DS_Store
-.vscode/
-.idea/

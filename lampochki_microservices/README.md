@@ -13,7 +13,21 @@ lampochki_microservices/
 
 ## Запуск
 
-Запустите все три сервиса, затем frontend.
+**Один скрипт (backend + frontend, Windows PowerShell)** — из корня репозитория `lamps`:
+
+```powershell
+.\start.ps1
+```
+
+Откроются 4 окна терминала. Сайт: http://localhost:5173, админ: http://localhost:5173/login
+
+Только backend (3 микросервиса):
+
+```powershell
+.\start-services.ps1
+```
+
+Ручной запуск по отдельности:
 
 ```bash
 # Терминал 1 — аутентификация
