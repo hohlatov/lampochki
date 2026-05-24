@@ -1,17 +1,23 @@
-const ORDERS_URL = 'http://localhost:8001/orders'
+const ORDERS_URL = 'http://localhost:8001/orders/'
 
 export async function createOrder(orderData) {
   const response = await fetch(ORDERS_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(orderData),
   })
 
+  const data = await response.json().catch(() => ({}))
+
   if (!response.ok) {
-    throw new Error('Ошибка создания заказа')
+    const detail = data.detail
+    const message = Array.isArray(detail)
+      ? detail.map((e) => e.msg).join(', ')
+      : typeof detail === 'string'
+        ? detail
+        : 'Ошибка создания заказа'
+    throw new Error(message)
   }
 
-  return response.json()
+  return data
 }
