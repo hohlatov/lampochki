@@ -4,7 +4,7 @@
 
 ```
 lampochki_microservices/
-├── auth_service/       # порт 8002 — JWT-аутентификация
+├── auth_service/       # порт 8002 — сервис панели управления (JWT-аутентификация)
 ├── products_service/   # порт 8000 — товары
 └── orders_service/     # порт 8001 — заказы
 ```
@@ -123,3 +123,5 @@ Frontend: http://localhost:5173
 - `shipped` — отправлен
 - `delivered` — доставлен
 - `cancelled` — отменён
+
+При смене статуса на `cancelled` сервис заказов автоматически возвращает товары на склад.

@@ -85,10 +85,26 @@ def change_status(db: Session, order_id: str, status: str):
             status_code=422,
             detail=f"Недопустимый статус. Допустимые значения: {', '.join(ALLOWED_STATUSES)}"
         )
-    order = crud.update_order_status(db, order_id, status)
-    if not order:
-        raise HTTPException(status_code=404, detail="Заказ не найден")
-    return order
+    order = get_order_or_404(db, order_id)
+
+    # Повторное выставление текущего статуса не меняет состояние заказа.
+    if order.status == status:
+        return order
+
+    # Если заказ отменяется впервые — возвращаем товары на склад.
+    if status == "cancelled" and order.status != "cancelled":
+        for item in order.items:
+            products_client.increase_stock(item.product_id, item.quantity)
+
+    # Из отмененного заказа нельзя вернуться в активные статусы:
+    # резерв и жизненный цикл заказа уже завершены.
+    if order.status == "cancelled" and status != "cancelled":
+        raise HTTPException(
+            status_code=409,
+            detail="Нельзя изменить статус отмененного заказа"
+        )
+
+    return crud.update_order_status(db, order_id, status)
 
 
 def list_orders(db: Session):
